@@ -15,6 +15,9 @@ class CreateRecreationEventsTable extends Migration
     {
         Schema::create('recreation_events', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('image')->nullable();
+            $table->longText('description');
             $table->timestamps();
         });
     }
