@@ -90,7 +90,6 @@ class MenuController extends Controller
         try {
             Menu::truncate();
             $items = json_decode($request->items,true);
-//            return response()->json($mainMenu);
             foreach ($items as $key => $row){
                 $row = (object)$row;
                 $mainMenu = new Menu();

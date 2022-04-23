@@ -37,8 +37,6 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
-            // console.log(str);
-            // return
             $.ajax({
                 type: 'post',
                 url: '/admin/settings/menu',
