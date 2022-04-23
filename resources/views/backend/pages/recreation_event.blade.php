@@ -60,8 +60,13 @@
                                                 <i class="fas fa-edit"></i>
                                             </button>
                                         </a>
-                                        <button type="button" class="btn btn-sm btn-danger rounded">
+
+                                        <button type="button" class="btn btn-sm btn-danger rounded destroy">
                                             <i class="fas fa-trash-alt"></i>
+                                            <form action="{{ route('admin.recreation.destroy',$recreationEvent->id) }}" method="post">
+                                                @method("delete")
+                                                @csrf
+                                            </form>
                                         </button>
                                     </td>
                                 </tr>
@@ -77,5 +82,31 @@
 @endsection
 
 @section('page-script')
-
+    <script>
+        (function ($){
+            "use script";
+            const deleteAccountAlert = (e) => {
+                swal({
+                    title: "{{__('Are you sure?')}}",
+                    text: "{{__('Once you delete, You can\'t recover this data')}}",
+                    icon: "warning",
+                    dangerMode: true,
+                    buttons: {
+                        cancel: true,
+                        confirm: {
+                            text: "Delete",
+                            value: true,
+                            visible: true,
+                            closeModal: true
+                        },
+                    },
+                }).then((value) => {
+                    if(value){
+                        e.target.closest('td').querySelector('form').submit();
+                    }
+                });
+            }
+            document.querySelector('.destroy').onclick = deleteAccountAlert;
+        })(jQuery)
+    </script>
 @endsection

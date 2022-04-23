@@ -161,7 +161,7 @@ class RecreationEventController extends Controller
                 }
             }
             $recreation->delete();
-            return $this->backWithSuccess('Deleted Successfully');
+            return $this->redirectBackWithSuccess('Deleted Successfully','admin.recreation.index');
         } catch (\Throwable $th) {
             return $this->backWithError($th->getMessage());
         }
