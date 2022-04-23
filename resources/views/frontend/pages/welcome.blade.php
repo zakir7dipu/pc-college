@@ -70,7 +70,7 @@
                                         <div class="col-12 p-2 d-flex event-item">
                                             <div class="col-4 p-0">
                                                 <img src="{{ asset($recreation->image) }}" alt="" class="img-small img-thumbnail">
-                                                <i class="fa fa-calendar" aria-hidden="true"></i> <small>{{ date('F d,Y',strtotime($recreations[0]->created_at)) }}</small>
+                                                <i class="fa fa-calendar" aria-hidden="true"></i> <small>{{ date('F d,Y',strtotime($recreation->created_at)) }}</small>
                                             </div>
                                             <div class="col-8 p-1">
                                                 <h6>{{ $recreation->title }}</h6>
@@ -85,28 +85,28 @@
 
                 <h3 class="sectionTitle executiveComityMeetingTitle"><span>DUAA Program News</span></h3>
                 <section class="d-flex pt-4">
-                    @if($recreations)
+                    @if($executiveMeetings)
                         <div class="col-md-7 col-sm-12 p-2">
                             <div class="col-12">
-                                <img src="{{ asset($recreations[0]->image) }}" alt="Event Image">
+                                <img src="{{ asset($executiveMeetings[0]->image) }}" alt="Event Image">
                                 <div class="col-12 my-4 p-2">
-                                    <h5 class="m-0">{{ $recreations[0]->title }}</h5>
-                                    <i class="fa fa-calendar" aria-hidden="true"></i> <small>{{ date('F d,Y',strtotime($recreations[0]->created_at)) }}</small>
-                                    <p>{{ \Str::limit(strip_tags($recreations[0]->description), 150).'..' }}</p>
+                                    <h5 class="m-0">{{ $executiveMeetings[0]->title }}</h5>
+                                    <i class="fa fa-calendar" aria-hidden="true"></i> <small>{{ date('F d,Y',strtotime($executiveMeetings[0]->created_at)) }}</small>
+                                    <p>{{ \Str::limit(strip_tags($executiveMeetings[0]->description), 150).'..' }}</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-5 col-sm-12">
                             <div class="row">
-                                @foreach($recreations as $key => $recreation)
+                                @foreach($executiveMeetings as $key => $executiveMeeting)
                                     @if($key>=0)
                                         <div class="col-12 p-2 d-flex event-item">
                                             <div class="col-4 p-0">
-                                                <img src="{{ asset($recreation->image) }}" alt="" class="img-small img-thumbnail">
-                                                <i class="fa fa-calendar" aria-hidden="true"></i> <small>{{ date('F d,Y',strtotime($recreations[0]->created_at)) }}</small>
+                                                <img src="{{ asset($executiveMeeting->image) }}" alt="" class="img-small img-thumbnail">
+                                                <i class="fa fa-calendar" aria-hidden="true"></i> <small>{{ date('F d,Y',strtotime($executiveMeeting->created_at)) }}</small>
                                             </div>
                                             <div class="col-8 p-1">
-                                                <h6>{{ $recreation->title }}</h6>
+                                                <h6>{{ $executiveMeeting->title }}</h6>
                                             </div>
                                         </div>
                                     @endif

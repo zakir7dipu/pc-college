@@ -18,6 +18,7 @@ class CreateExcutiveCommitteeMeetingsTable extends Migration
             $table->string('title');
             $table->string('image')->nullable();
             $table->longText('description');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

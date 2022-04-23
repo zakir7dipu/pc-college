@@ -37,7 +37,7 @@
                         <h6>{{ __($title) }}</h6>
                     </div>
                     <div class="card-body">
-                        <form method="post" action="{{ $value?route('admin.recreation.update',$value->id):route('admin.recreation.store') }}" enctype="multipart/form-data">
+                        <form method="post" action="{{ $value?route('admin.'.$pageItem.'.update',$value->id):route('admin.'.$pageItem.'.store') }}" enctype="multipart/form-data">
                             @csrf
                             @if($value)
                                 @method("put")

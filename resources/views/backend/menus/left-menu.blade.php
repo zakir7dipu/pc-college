@@ -68,8 +68,13 @@
                 <li class="nav-item {{ request()->is('admin/recreation') ?'active':'' }}">
                     <a href="{{ route('admin.recreation.index') }}" class="nav-link">
                         <i class="material-icons">arrow_forward</i>
-{{--                        <i class="material-symbols-outlined"></i>--}}
                         <span class="link-text">{{ __('recreation events') }}</span>
+                    </a>
+                </li>
+                <li class="nav-item {{ request()->is('admin/executive-meeting') ?'active':'' }}">
+                    <a href="{{ route('admin.executive-meeting.index') }}" class="nav-link">
+                        <i class="material-icons">arrow_forward</i>
+                        <span class="link-text">{{ __('executive meeting') }}</span>
                     </a>
                 </li>
 

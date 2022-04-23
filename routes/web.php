@@ -3,6 +3,7 @@
 use App\Actions\Fortify\UpdateUserPassword;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AppSettingsController;
+use App\Http\Controllers\ExcutiveCommitteeMeetingController;
 use App\Http\Controllers\Guest\GuestController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\PaymentMethodInputController;
@@ -86,4 +87,6 @@ Route::prefix('/admin')->as('admin.')->middleware(['auth:sanctum', 'verified'])-
 
     // programs
     Route::resource('/recreation',RecreationEventController::class);
+    // executive meeting
+    Route::resource('/executive-meeting',ExcutiveCommitteeMeetingController::class);
 });

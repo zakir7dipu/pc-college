@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\RecreationEvent;
+use App\Models\ExcutiveCommitteeMeeting;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 
-class RecreationEventController extends Controller
+class ExcutiveCommitteeMeetingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +16,9 @@ class RecreationEventController extends Controller
     public function index()
     {
         try {
-            $title = "Recreation Events";
-            $data = RecreationEvent::orderBy('id', 'DESC')->paginate(10);
-            $pageItem = "recreation";
+            $title = "Executive Meeting";
+            $data = ExcutiveCommitteeMeeting::orderBy('id', 'DESC')->paginate(10);
+            $pageItem = "executive-meeting";
             return view('backend.pages.page-index', compact('title', 'pageItem', 'data'));
         } catch (\Throwable $th) {
             return $this->backWithError($th->getMessage());
@@ -33,9 +33,9 @@ class RecreationEventController extends Controller
     public function create()
     {
         try {
-            $title = "Add New Recreation Event";
+            $title = "Executive Meeting";
             $value = null;
-            $pageItem = "recreation";
+            $pageItem = "executive-meeting";
             return view('backend.pages.form', compact('title', 'value', 'pageItem'));
         } catch (\Throwable $th) {
             return $this->backWithError($th->getMessage());
@@ -51,8 +51,8 @@ class RecreationEventController extends Controller
     public function store(Request $request)
     {
         try {
-            $event = new RecreationEvent();
-            $event->title = $request->title;
+            $executive_meeting = new ExcutiveCommitteeMeeting();
+            $executive_meeting->title = $request->title;
             if ($request->hasFile('photo')){
                 $images = $request->photo;
                 foreach ($images as $img) {
@@ -64,14 +64,14 @@ class RecreationEventController extends Controller
                 }
                 Image::make($image->getRealPath())
                     ->resize(800, 445)
-                    ->save(public_path('/upload/recreation-event/' . $filename));
-                $path = "/upload/recreation-event/".$filename;
-                $event->image = $path;
+                    ->save(public_path('/upload/executive-meeting/' . $filename));
+                $path = "/upload/executive-meeting/".$filename;
+                $executive_meeting->image = $path;
             }
-            $event->description = $request->description;
-            $event->save();
+            $executive_meeting->description = $request->description;
+            $executive_meeting->save();
 
-            return $this->redirectBackWithSuccess('Saved Successfully','admin.recreation.index');
+            return $this->redirectBackWithSuccess('Saved Successfully','admin.executive-meeting.index');
         } catch (\Throwable $th) {
             return $this->backWithError($th->getMessage());
         }
@@ -94,12 +94,12 @@ class RecreationEventController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(RecreationEvent $recreation)
+    public function edit(ExcutiveCommitteeMeeting $executive_meeting)
     {
         try {
-            $title = "Edit ".$recreation->title;
-            $value = $recreation;
-            $pageItem = "recreation";
+            $title = "Edit ".$executive_meeting->title;
+            $value = $executive_meeting;
+            $pageItem = "executive-meeting";
             return view('backend.pages.form', compact('title', 'value', 'pageItem'));
         } catch (\Throwable $th) {
             return $this->backWithError($th->getMessage());
@@ -113,13 +113,13 @@ class RecreationEventController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, RecreationEvent $recreation)
+    public function update(Request $request, ExcutiveCommitteeMeeting $executive_meeting)
     {
         try {
-            $recreation->title = $request->title;
+            $executive_meeting->title = $request->title;
             if ($request->hasFile('photo')){
-                if ($recreation->image){
-                    $file = $recreation->image;
+                if ($executive_meeting->image){
+                    $file = $executive_meeting->image;
                     if (file_exists(public_path($file))) {
                         unlink(public_path($file));
                     }
@@ -135,12 +135,12 @@ class RecreationEventController extends Controller
                 }
                 Image::make($image->getRealPath())
                     ->resize(800, 445)
-                    ->save(public_path('/upload/recreation-event/' . $filename));
-                $path = "/upload/recreation-event/".$filename;
-                $recreation->image = $path;
+                    ->save(public_path('/upload/executive-meeting/' . $filename));
+                $path = "/upload/executive-meeting/".$filename;
+                $executive_meeting->image = $path;
             }
-            $recreation->description = $request->description;
-            $recreation->save();
+            $executive_meeting->description = $request->description;
+            $executive_meeting->save();
 
             return $this->backWithSuccess('Updated Successfully');
         } catch (\Throwable $th) {
@@ -154,17 +154,17 @@ class RecreationEventController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(RecreationEvent $recreation)
+    public function destroy(ExcutiveCommitteeMeeting $executive_meeting)
     {
         try {
-            if ($recreation->image){
-                $file = $recreation->image;
+            if ($executive_meeting->image){
+                $file = $executive_meeting->image;
                 if (file_exists(public_path($file))) {
                     unlink(public_path($file));
                 }
             }
-            $recreation->delete();
-            return $this->redirectBackWithSuccess('Deleted Successfully','admin.recreation.index');
+            $executive_meeting->delete();
+            return $this->redirectBackWithSuccess('Deleted Successfully','admin.executive-meeting.index');
         } catch (\Throwable $th) {
             return $this->backWithError($th->getMessage());
         }
