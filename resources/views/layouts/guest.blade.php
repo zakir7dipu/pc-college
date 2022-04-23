@@ -13,12 +13,20 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="{{ asset('forntend/css/bootstrap.min.css') }}" />
+        <!-- Fontawesome CSS -->
+        <link rel="stylesheet" href="{{ asset('forntend/css/all.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('forntend/css/style.css') }}" />
+
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
-    <body>
+    <body class="login_bg_body">
         <div class="font-sans text-gray-900 antialiased">
             {{ $slot }}
         </div>
+
+    @include('auth.intarnal-assets.js.js')
     </body>
 </html>

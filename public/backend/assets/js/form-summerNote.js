@@ -5,7 +5,7 @@
 {
     "use strict";
     $('textarea').summernote({
-        placeholder: 'Wright your content................',
+        placeholder: 'Write your content................',
         minHeight: 350,
         maxHeight: 400,
         styleTags: ['p', 'pre', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'],

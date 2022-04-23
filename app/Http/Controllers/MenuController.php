@@ -32,7 +32,7 @@ class MenuController extends Controller
     public function create()
     {
         try {
-            $items = Menu::where('parent_id', 0)
+            $items = Menu::where('parent_id', null)
                 ->select('id', 'href', 'icon', 'text', 'target', 'title')
                 ->orderBy('position','ASC')
                 ->get();
@@ -98,7 +98,6 @@ class MenuController extends Controller
                 $mainMenu->href = $row->href;
                 $mainMenu->target = $row->target;
                 $mainMenu->title = property_exists($row,'title')?$row->title:null;
-//                $mainMenu->parent_id = 0;
                 $mainMenu->position = $key+1;
                 $mainMenu->save();
                 if (property_exists($row,'children')) {

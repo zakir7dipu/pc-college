@@ -1,0 +1,135 @@
+.main-content {
+	margin-top: 130px;
+	margin-bottom: 3rem;
+}
+body,
+html {
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	font-family: SolaimanLipi !important;
+	line-height: normal;
+}
+.login_bg_body {
+	background-color: #f5f7fa;
+}
+.main-content .box .box-content {
+	width: 60%;
+	min-height: 420px !important;
+	margin: auto;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+@media screen and (max-width: 992px) {
+    .main-content .box .box-content {
+        width: 95%;
+    }
+}
+.hidden-section-logo-bg {
+	text-align: center;
+	margin: auto;
+	background: #609513;
+	padding: 20px 10px;
+	margin-top: 0;
+	display: block;
+	width: 100%;
+}
+.main-content .box .login-bg {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: #609513;
+	padding: 20px;
+	box-shadow: 0 0 10px rgb(0 0 0 / 50%);
+}
+.main-content .logo {
+	border: 7px solid #fff;
+	padding: 5px;
+	border-radius: 50%;
+	width: 120px;
+	height: 120px;
+	margin: auto;
+	margin-bottom: 20px;
+}
+.main-content .login-bg .content {
+	width: 100%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.main-content .login-img {
+	background: #fff;
+	border-radius: 50%;
+	padding: 10px;
+	width: 100%;
+	height: 100%;
+}
+.log-max-show .tab-content {
+	padding-bottom: 20px;
+}
+.tab-content > .active {
+	display: block;
+}
+.main-content .form {
+	padding: 20px 30px;
+}
+.main-content .login-form {
+	width: 100%;
+	transform: translateY(16%);
+	-webkit-transform: translateY(16%);
+	-moz-transform: translateY(16%);
+	-ms-transform: translateY(16%);
+	-o-transform: translateY(16%);
+}
+.main-content .tab-content input {
+	font-size: 15px;
+	margin-top: 20px;
+}
+.main-content .tab-content .first-input {
+	margin-top: 1rem;
+}
+.main-content .tab-content input {
+	font-size: 15px;
+	margin-top: 20px;
+}
+.btn,
+.btn:focus,
+.form-control,
+.form-control:focus,
+.custom-select,
+.custom-select:focus {
+	outline: none;
+	box-shadow: none;
+	border: 1px solid #ced4da;
+}
+.text-center {
+	text-align: center !important;
+}
+.main-content .form .btns a {
+	font-size: 15px;
+	text-decoration: none;
+	color: #707583;
+}
+.log-icon {
+	background: #609513;
+	border: none;
+	outline: none;
+}
+.log-icon:hover {
+	background: #3d6700;
+	cursor: pointer;
+	border: none;
+	outline: none;
+}
+
+#login > form > div > div.text-center > button:hover {
+	color: #ca4c31;
+	background: #3b6101;
+	border: none;
+	-webkit-transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	-o-transition: all 0.4s ease-in-out;
+	-ms-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out;
+}
+@media (max-width: 575.98px) {
+}

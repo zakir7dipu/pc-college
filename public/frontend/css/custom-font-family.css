@@ -1,0 +1,45 @@
+@font-face
+{
+    font-family: 'Galada';
+    font-weight: normal;
+    font-style: normal;
+
+    src: url('../google-fonts/Galada-Regular.ttf');
+    src: url('../google-fonts/Galada-Regular.eot?#iefix') format('embedded-opentype'), url('../google-fonts/Galada-Regular.woff') format('woff'), url('../google-fonts/Galada-Regular.ttf') format('truetype'), url('../google-fonts/Galada-Regular.svg#slick') format('svg');
+}
+.text-galada{
+    font-family: 'Galada';
+}
+@font-face
+{
+    font-family: 'Roboto';
+    font-weight: normal;
+    font-style: normal;
+
+    src: url('../google-fonts/RobotoCondensed-Regular.ttf');
+    src: url('../google-fonts/RobotoCondensed-Regular.eot?#iefix') format('embedded-opentype'), url('../google-fonts/RobotoCondensed-Regular.woff') format('woff'), url('../google-fonts/RobotoCondensed-Regular.ttf') format('truetype'), url('../google-fonts/RobotoCondensed-Regular.svg#slick') format('svg');
+}
+.text-roboto{
+    font-family: 'Roboto';
+}
+.text-roboto-bold{
+    font-family: 'Roboto';
+    font-weight: bold;
+}
+
+@font-face
+{
+    font-family: 'Kalpurush';
+    font-weight: normal;
+    font-style: normal;
+
+    src: url('../google-fonts/Kalpurush.ttf');
+    src: url('../google-fonts/Kalpurush.eot?#iefix') format('embedded-opentype'), url('../google-fonts/Kalpurush.woff') format('woff'), url('../google-fonts/Kalpurush.ttf') format('truetype'), url('../google-fonts/Kalpurush.svg#slick') format('svg');
+}
+.text-kalpurush{
+    font-family: 'Kalpurush';
+}
+.text-kalpurush-bold{
+    font-family: 'Kalpurush';
+    font-weight: bold;
+}

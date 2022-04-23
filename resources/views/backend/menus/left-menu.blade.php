@@ -64,6 +64,15 @@
                 </li>
                 <!-- NAV DIVIDER -->
                 <li class="nav-divider"></li>
+                <!-- NAV Programs -->
+                <li class="nav-item {{ request()->is('admin/recreation') ?'active':'' }}">
+                    <a href="{{ route('admin.recreation.index') }}" class="nav-link">
+                        <i class="material-icons">arrow_forward</i>
+{{--                        <i class="material-symbols-outlined"></i>--}}
+                        <span class="link-text">{{ __('recreation events') }}</span>
+                    </a>
+                </li>
+
             </ul>
         </div>
     </div>

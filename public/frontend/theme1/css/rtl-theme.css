@@ -1,0 +1,199 @@
+nav.navbar.bootsnav ul.navbar-right li.dropdown ul.dropdown-menu li.dropdown > a.dropdown-toggle:before{
+    float: left;
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.topbar::after {
+    right: -65px;
+    left: auto;
+    border-top: 75px solid transparent;
+    border-left: 65px solid #168dd2 !important;
+}
+
+.control-round .carousel-control.left {
+    left: 1%;
+    right: auto;
+}
+
+.control-round .carousel-control.right {
+    right: 1%;
+    left: auto;
+}
+
+.div-hafe .layer-overlay::before {
+    right: 0;
+}
+
+.layer-overlay.style-3::after {
+    left: 0;
+    right: auto;
+}
+
+.property-content.pl-5 {
+    padding-left: 0rem!important;
+    padding-right: 5rem!important;
+}
+
+.property-content.pr-5 {
+    padding-left: 5rem!important;
+    padding-right: 0rem!important;
+}
+
+.property-box {
+    text-align: right;
+}
+
+.property-box .property-content span i {
+    float: right;
+}
+
+.tab .tab_content .tabs_item ul li i {
+    margin-left: 8px;
+    margin-right: 0;
+}
+
+.div-hafe .layer-overlay.style-3.agen::after {
+    right: 0;
+    left: auto;
+}
+
+.room-dimensions-details .room-dimensions-content .icon a:nth-child(3) {
+    border-right: 0;
+}
+
+.room-dimensions-details .room-dimensions-content .icon a:nth-child(1) {
+    border-right: 1px solid #ddd;
+}
+
+.layer-overlay.style-4::after {
+    left: 0;
+    right: auto;
+}
+
+.header-topbar-col ul.address li i {
+    margin-left: 8px;
+}
+
+.layer-overlay.style-3::before {
+    left: 0;
+    right: auto;
+}
+
+.tab .tabs li {
+    float: right;
+}
+
+.tab .tabs {
+    float: right;
+}
+
+.property-box .property-info ul li i::before {
+    margin-left: 10px;
+    float: right;
+}
+
+.blog-box .blog-contant {
+    text-align: right;
+}
+
+.blog-box .date-mate {
+    right: 15px;
+    left: auto;
+}
+
+.property-search-bar .form-group i {
+    left: 0;
+    right: auto;
+}
+
+.property-box .sale {
+    right: -20px;
+    left: auto;
+    padding-left: 0;
+}
+
+.property-box .sale::before {
+    content: '';
+    display: table;
+    position: absolute;
+    border-top: 20px solid #168DD2;
+    border-bottom: 20px solid #168dd2;
+    border-left: 20px solid #168dd200;
+    border-right: 120px solid #168DD2 !important;
+}
+
+.property-box .sale span {
+    margin-left: 0px;
+    margin-right: 25px;
+    text-align: center;
+}
+
+.property-box .sale span::before, 
+.property-box .sale span::after {
+    display: none;
+}
+
+.single-property .icon-left {
+    padding-left: 20px;
+    padding-right: 0;
+}
+
+.attr-nav {
+    float: left;
+    margin-right: 15px;
+}
+
+.border-style-1:after {
+    right: 0;
+    left: auto;
+}
+
+nav.navbar.bootsnav ul.nav.navbar-right .dropdown-menu .dropdown-menu.dropdown-menu-left {
+    right: -250px;
+    left: auto;
+}
+
+.dropdown-buttons .menu-search-box .search-box i {
+    left: 0;
+    right: auto;
+}
+
+.dropdown-buttons .dropdown-menu-right {
+    left: 220px;
+}
+
+.dropdown-buttons {
+    margin-left: 0;
+    margin-right: 15px;
+}
+
+.dropdown-buttons .menu-search-box ul {
+    left: 250px;
+}
+
+.header .navbar-nav li.nav-item .dropdown-toggle.dropdown-item::after {
+    left: 5px;
+    right: auto;
+}
+
+.testimonal-area .owl-carousel .owl-nav .owl-prev {
+    left: 75px;
+    right: auto;
+}
+
+.single-property {
+    margin: 0px 0px 30px 25px;
+}
+
+.appointment-form.style-1 h4::after {
+    left: auto;
+    right: 2px;
+}
+
+.footer-widget-one .address li i {
+        margin-right: 8px;
+        margin-left: 0;
+}

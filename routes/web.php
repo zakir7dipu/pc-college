@@ -3,8 +3,10 @@
 use App\Actions\Fortify\UpdateUserPassword;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AppSettingsController;
+use App\Http\Controllers\Guest\GuestController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\PaymentMethodInputController;
+use App\Http\Controllers\RecreationEventController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,9 +20,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [GuestController::class, 'index']);
 
 //Route::middleware([
 //    'auth:sanctum',
@@ -83,4 +83,7 @@ Route::prefix('/admin')->as('admin.')->middleware(['auth:sanctum', 'verified'])-
     Route::prefix('/contact-message')->as('contact-message.')->group(function (){
         Route::get('/', [AdminController::class, 'contactMessageIndex'])->name('index');
     });
+
+    // programs
+    Route::resource('/recreation',RecreationEventController::class);
 });
