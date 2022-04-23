@@ -3,6 +3,7 @@
 use App\Actions\Fortify\UpdateUserPassword;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AppSettingsController;
+use App\Http\Controllers\MenuController;
 use App\Http\Controllers\PaymentMethodInputController;
 use Illuminate\Support\Facades\Route;
 
@@ -71,6 +72,11 @@ Route::prefix('/admin')->as('admin.')->middleware(['auth:sanctum', 'verified'])-
             Route::get('/method/{payment}', [PaymentMethodInputController::class, 'getMethodForm'])->name('method');
             Route::post('/store/{payment}', [PaymentMethodInputController::class, 'storePayment'])->name('store');
         });
+        //menu
+        Route::prefix('menu')->as('menu.')->group(function (){
+            Route::resource('/', MenuController::class, ['only' => ['index', 'create', 'store']]);
+        });
+
     });
 
     //contact message

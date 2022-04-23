@@ -20,6 +20,8 @@ class CreateEventsTable extends Migration
             $table->longText('description');
             $table->string('button_text');
             $table->string('button_url');
+            $table->boolean('status')->default(true);
+            $table->dateTime('start_at');
             $table->timestamps();
         });
     }
