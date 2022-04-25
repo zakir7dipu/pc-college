@@ -16,7 +16,8 @@ class CreateMediaCoveragesTable extends Migration
         Schema::create('media_coverages', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('video_id');
+            $table->longText('description');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

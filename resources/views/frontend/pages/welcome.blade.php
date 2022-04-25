@@ -66,7 +66,7 @@
                         <div class="col-md-5 col-sm-12">
                             <div class="row">
                                 @foreach($recreations as $key => $recreation)
-                                    @if($key>=0)
+                                    @if($key!=0)
                                         <div class="col-12 p-2 d-flex event-item">
                                             <div class="col-4 p-0">
                                                 <img src="{{ asset($recreation->image) }}" alt="" class="img-small img-thumbnail">
@@ -83,7 +83,7 @@
                     @endif
                 </section>
 
-                <h3 class="sectionTitle executiveComityMeetingTitle"><span>DUAA Program News</span></h3>
+                <h3 class="sectionTitle executiveComityMeetingTitle"><span>Executive Committee Meeting</span></h3>
                 <section class="d-flex pt-4">
                     @if($executiveMeetings)
                         <div class="col-md-7 col-sm-12 p-2">
@@ -99,7 +99,7 @@
                         <div class="col-md-5 col-sm-12">
                             <div class="row">
                                 @foreach($executiveMeetings as $key => $executiveMeeting)
-                                    @if($key>=0)
+                                    @if($key!=0)
                                         <div class="col-12 p-2 d-flex event-item">
                                             <div class="col-4 p-0">
                                                 <img src="{{ asset($executiveMeeting->image) }}" alt="" class="img-small img-thumbnail">
@@ -115,9 +115,115 @@
                         </div>
                     @endif
                 </section>
+
+                <h3 class="sectionTitle executiveComityMeetingTitle"><span>Media Coverage</span></h3>
+                <section class="d-flex pt-4">
+                    @foreach($mediaCoverages as $mediaCoverage)
+                        <div class="col-12 my-4 p-2 event-item">
+                            <h5 class="m-0">{{ $mediaCoverage->title }}</h5>
+                            <i class="fa fa-calendar" aria-hidden="true"></i> <small>{{ date('F d,Y',strtotime($mediaCoverage->created_at)) }}</small>
+                        </div>
+                    @endforeach
+                </section>
+
+                <h3 class="sectionTitle executiveComityMeetingTitle"><span>DUAA Scholarship</span></h3>
+                <section class="d-flex pt-4">
+                    <div class="col-12 my-4 p-2">
+                        <img src="{{ asset($farewells[0]->image) }}" alt="Event Image">
+                        <div class="col-12 my-4 p-2 event-item">
+                            <h5 class="m-0">{{ $farewells[0]->title }}</h5>
+                            <i class="fa fa-calendar" aria-hidden="true"></i> <small>{{ date('F d,Y',strtotime($farewells[0]->created_at)) }}</small>
+                            <p>{{ \Str::limit(strip_tags($farewells[0]->description), 250).'..' }}</p>
+                        </div>
+                        @if($key!=0)
+                        @foreach($farewells as $farewell)
+                            <div class="col-12 my-4 p-2 event-item">
+                                <div class="row">
+                                    <div class="col-4 p-0">
+                                        <img src="{{ asset($farewell->image) }}" alt="" class="img-small img-thumbnail">
+                                    </div>
+                                    <div class="col-8 p-1">
+                                        <h6>{{ $farewell->title }}</h6>
+                                        <i class="fa fa-calendar" aria-hidden="true"></i> <small>{{ date('F d,Y',strtotime($farewell->created_at)) }}</small>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                        @endif
+                    </div>
+                </section>
+
+                <h3 class="sectionTitle executiveComityMeetingTitle"><span>DUAA Documents</span></h3>
+                <section class="d-flex pt-4">
+                    <div class="row">
+                        @foreach($blogs as $key => $blog)
+                            @if($key == 0)
+                                <div class="col-md-6 col-sm-12">
+                                    <img src="{{ asset($blog->image) }}" alt="Event Image">
+                                    <div class="col-12 my-4 p-2 event-item">
+                                        <h5 class="m-0">{{ $blog->title }}</h5>
+                                        <i class="fa fa-calendar" aria-hidden="true"></i> <small>{{ date('F d,Y',strtotime($blog->created_at)) }}</small>
+                                        <p>{{ \Str::limit(strip_tags($blog->description), 150).'..' }}</p>
+                                    </div>
+                                </div>
+                            @else
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="row">
+                                        <div class="col-4 p-0">
+                                            <img src="{{ asset($blog->image) }}" alt="" class="img-small img-thumbnail">
+                                            <i class="fa fa-calendar" aria-hidden="true"></i> <small>{{ date('F d,Y',strtotime($blog->created_at)) }}</small>
+                                        </div>
+                                        <div class="col-8 p-1">
+                                            <h6>{{ $blog->title }}</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
+                        @endforeach
+                    </div>
+                </section>
             </section>
-            <section class="col-lg-4 col-md-4 col-sm-12 bg-success contentRight">
-                hi
+            <section class="col-lg-4 col-md-4 col-sm-12 contentRight">
+
+                <h3 class="sectionTitle executiveComityMeetingTitle"><span>Upcoming Events</span></h3>
+                <section class="pt-4">
+                    <img src="{{ asset($event->image) }}" alt="Event Image">
+                    <div class="col-12 my-4 p-2">
+                        <h5 class="m-0">{{ $event->title }}</h5>
+                        <i class="fa fa-calendar" aria-hidden="true"></i> <small>{{ date('F d,Y',strtotime($event->created_at)) }}</small>
+                        <p>{{ \Str::limit(strip_tags($event->description), 150).'..' }}</p>
+                    </div>
+                </section>
+
+                <h3 class="sectionTitle executiveComityMeetingTitle mt-3"><span>Hot Link Numbers</span></h3>
+                <section class="pt-4 text-center">
+                    <img src="{{ asset('upload/settings/2020-01-29-15-38-1110062e77cba2e7d935d46121912483.jpg') }}" alt="" class="img-fluid img-thumbnail" style="width: 80%; height: 70%;">
+                </section>
+
+                <h3 class="sectionTitle executiveComityMeetingTitle mt-3"><span>Upcoming Events</span></h3>
+                <section class="pt-4">
+                    @if($notices)
+                        @foreach($notices as $key => $notice)
+                            @if($key == 0)
+                                <img src="{{ asset($notice->image) }}" alt="Event Image">
+                                <div class="col-12 my-4 p-2">
+                                    <h5 class="m-0">{{ $notice->title }}</h5>
+                                    <i class="fa fa-calendar" aria-hidden="true"></i> <small>{{ date('F d,Y',strtotime($notice->created_at)) }}</small>
+                                </div>
+                            @else
+                                <div class="row">
+                                    <div class="col-4 p-0">
+                                        <img src="{{ asset($notice->image) }}" alt="" class="img-small img-thumbnail">
+                                        <i class="fa fa-calendar" aria-hidden="true"></i> <small>{{ date('F d,Y',strtotime($notice->created_at)) }}</small>
+                                    </div>
+                                    <div class="col-8 p-1">
+                                        <h6>{{ $notice->title }}</h6>
+                                    </div>
+                                </div>
+                            @endif
+                        @endforeach
+                    @endif
+                </section>
             </section>
         </div>
     </section>

@@ -10,5 +10,5 @@ class Event extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['title', 'image', 'description', 'button_text', 'button_url'];
+    protected $fillable = ['title', 'image', 'description', 'button_text', 'button_url','status', 'start_at'];
 }

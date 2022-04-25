@@ -41,7 +41,9 @@
                             <thead>
                             <tr class="text-center">
                                 <th width="5%">SL</th>
+                                @if($pageItem != "media-coverage")
                                 <th width="20%">Thumb</th>
+                                @endif
                                 <th width="60%">Title</th>
                                 <th width="15%">Action</th>
                             </tr>
@@ -50,9 +52,11 @@
                             @foreach($data as $key => $item)
                                 <tr>
                                     <th>{{ $key+1 }}</th>
+                                    @if($pageItem != "media-coverage")
                                     <td>
                                         <img src="{{ asset($item->image) }}" alt="" class="img-fluid img-thumbnail rounded">
                                     </td>
+                                    @endif
                                     <td>{{ $item->title }}</td>
                                     <td class="text-center">
                                         <a href="{{ route('admin.'.$pageItem.'.edit', $item->id) }}">

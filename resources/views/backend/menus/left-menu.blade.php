@@ -77,6 +77,36 @@
                         <span class="link-text">{{ __('executive meeting') }}</span>
                     </a>
                 </li>
+                <li class="nav-item {{ request()->is('admin/media-coverage') ?'active':'' }}">
+                    <a href="{{ route('admin.media-coverage.index') }}" class="nav-link">
+                        <i class="material-icons">arrow_forward</i>
+                        <span class="link-text">{{ __('Media Coverage') }}</span>
+                    </a>
+                </li>
+                <li class="nav-item {{ request()->is('admin/farewell') ?'active':'' }}">
+                    <a href="{{ route('admin.farewell.index') }}" class="nav-link">
+                        <i class="material-icons">arrow_forward</i>
+                        <span class="link-text">{{ __('Farewell') }}</span>
+                    </a>
+                </li>
+                <li class="nav-item {{ request()->is('admin/blog') ?'active':'' }}">
+                    <a href="{{ route('admin.blog.index') }}" class="nav-link">
+                        <i class="material-icons">arrow_forward</i>
+                        <span class="link-text">{{ __('Blogs') }}</span>
+                    </a>
+                </li>
+                <li class="nav-item {{ request()->is('admin/event') ?'active':'' }}">
+                    <a href="{{ route('admin.event.index') }}" class="nav-link">
+                        <i class="material-icons">arrow_forward</i>
+                        <span class="link-text">{{ __('Events') }}</span>
+                    </a>
+                </li>
+                <li class="nav-item {{ request()->is('admin/notice') ?'active':'' }}">
+                    <a href="{{ route('admin.notice.index') }}" class="nav-link">
+                        <i class="material-icons">arrow_forward</i>
+                        <span class="link-text">{{ __('Notice') }}</span>
+                    </a>
+                </li>
 
             </ul>
         </div>

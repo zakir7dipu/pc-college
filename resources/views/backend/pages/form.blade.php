@@ -53,10 +53,11 @@
                                         <textarea name="description" id="description" class="form-control">{!! $value?$value->description:'' !!}</textarea>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col--md-4 col-sm-12">
+                                <div class="col-lg-4 col-md-4 col-sm-12">
                                     <div class="form-group text-center">
                                         <button class="btn btn-lg w-50 btn-danger rounded">Save</button>
                                     </div>
+                                    @if($pageItem != "media-coverage")
                                     <div class="form-group imageHolder">
                                         {!! $value?'<img src="'.asset($value->image).'" alt="Image">':'' !!}
                                     </div>
@@ -67,7 +68,22 @@
                                             <div class="input-images"></div>
                                         </div>
                                     </div>
+                                    @endif
                                 </div>
+                                @if($pageItem == "event")
+                                    <div class="form-group col-lg-4 col-md-6 col-sm-12">
+                                        <label for="buttonText">Button Text</label>
+                                        <input class="form-control" type="text" name="button_text" id="buttonText" required value="{{ $value?$value->button_text:'' }}" placeholder="Button Text"/>
+                                    </div>
+                                    <div class="form-group col-lg-4 col-md-6 col-sm-12">
+                                        <label for="buttonUrl">Button Url</label>
+                                        <input class="form-control" type="text" name="button_url" id="buttonUrl" required value="{{ $value?$value->button_url:'' }}" placeholder="Button Url"/>
+                                    </div>
+                                    <div class="form-group col-lg-4 col-md-6 col-sm-12">
+                                        <label for="startAt">Start Date</label>
+                                        <input class="form-control" type="datetime-local" name="start_at" id="startAt" required value="{{ $value?strtotime($value->start_at):'' }}"/>
+                                    </div>
+                                @endif
                             </div>
                         </form>
                     </div>

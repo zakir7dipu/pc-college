@@ -10,5 +10,5 @@ class MediaCoverage extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['title', 'video_id'];
+    protected $fillable = ['title', 'description'];
 }

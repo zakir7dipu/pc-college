@@ -22,6 +22,7 @@ class CreateEventsTable extends Migration
             $table->string('button_url');
             $table->boolean('status')->default(true);
             $table->dateTime('start_at');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

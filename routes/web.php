@@ -3,9 +3,14 @@
 use App\Actions\Fortify\UpdateUserPassword;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AppSettingsController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\ExcutiveCommitteeMeetingController;
+use App\Http\Controllers\FarewellController;
 use App\Http\Controllers\Guest\GuestController;
+use App\Http\Controllers\MediaCoverageController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\PaymentMethodInputController;
 use App\Http\Controllers\RecreationEventController;
 use Illuminate\Support\Facades\Route;
@@ -89,4 +94,14 @@ Route::prefix('/admin')->as('admin.')->middleware(['auth:sanctum', 'verified'])-
     Route::resource('/recreation',RecreationEventController::class);
     // executive meeting
     Route::resource('/executive-meeting',ExcutiveCommitteeMeetingController::class);
+    // Media Coverage
+    Route::resource('/media-coverage', MediaCoverageController::class);
+    // Farewell
+    Route::resource('/farewell', FarewellController::class);
+    // blog
+    Route::resource('/blog', BlogController::class);
+    // event
+    Route::resource('/event', EventController::class);
+    // Notice
+    Route::resource('/notice', NoticeController::class);
 });
