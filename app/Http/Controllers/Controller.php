@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\ContactMessage;
 use App\Models\DistrictList;
+use App\Models\Event;
 use App\Models\GeneralSettings;
 use App\Models\Menu;
+use App\Models\Notice;
 use App\Models\SocialMediaLink;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -24,11 +26,18 @@ class Controller extends BaseController
         $districts = DistrictList::all();
         $socialMediaLinks = SocialMediaLink::all();
         $menus = Menu::where('parent_id', null)->orderBy('position','ASC')->get();
+        $event = Event::orderBy('id',"DESC")
+            ->first();
+        $notices = Notice::orderBy('id',"DESC")
+            ->take(4)
+            ->get();
         View::share('generalSettings', $generalSettings);
         View::share('unreadContactMessages', $unreadContactMessages);
         View::share('districts', $districts);
         View::share('socialMediaLinks', $socialMediaLinks);
         View::share('menus', $menus);
+        View::share('event', $event);
+        View::share('notices', $notices);
     }
 
     public function backWithError($message)

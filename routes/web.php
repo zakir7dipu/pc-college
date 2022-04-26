@@ -26,17 +26,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [GuestController::class, 'index']);
+Route::get('/', [GuestController::class, 'index'])->name('home');
+Route::get('/recreation-event/{recreation_Event}', [GuestController::class, 'recreationEventView'])->name('recreation-event');
+Route::get('/executive-meetings/{executive_meetings}', [GuestController::class, 'executiveMeetingsView'])->name('executive-meetings');
+Route::get('/media-coverage/{media_coverage}', [GuestController::class, 'mediaCoverageView'])->name('media-coverage');
+Route::get('/farewells/{farewells}', [GuestController::class, 'farewellsView'])->name('farewells');
+Route::get('/blog/{blog}', [GuestController::class, 'blogView'])->name('blog');
+Route::get('/event/{event}', [GuestController::class, 'eventView'])->name('event');
+Route::get('/notice/{notice}', [GuestController::class, 'noticeView'])->name('notice');
 
-//Route::middleware([
-//    'auth:sanctum',
-//    config('jetstream.auth_session'),
-//    'verified'
-//])->group(function () {
-//    Route::get('/dashboard', function () {
-//        return view('dashboard');
-//    })->name('dashboard');
-//});
+
 Route::prefix('/admin')->as('admin.')->middleware(['auth:sanctum', 'verified'])->group(function () {
     // dashboard rout
     Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
