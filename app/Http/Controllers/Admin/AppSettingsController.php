@@ -112,7 +112,7 @@ class AppSettingsController extends Controller
 
             $cleanValues = [];
             foreach ($inputs as $key => $input){
-                $cleanValues [$key] = clean($input);
+                $cleanValues [$key] = $input;
             }
 
             if (!$generalSettings){

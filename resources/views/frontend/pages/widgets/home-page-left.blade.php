@@ -1,5 +1,34 @@
 <section class="col-lg-8 col-md-8 col-sm-12">
-    <h3 class="sectionTitle recreationsEventTitle"><span>DUAA Program News</span></h3>
+    <section class="d-flex pt-4">
+            <div class="col-md-12 p-2">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-12">
+                            <img src="{{ asset('upload/avatar/young-man-with-glasses-avatar-character-TARBFT.jpg') }}" alt="" class="img img-fluid img-thumbnail rounded">
+                            <h4>Md. Example</h4>
+                        </div>
+                        <div class="col-lg-8 col-md-12 statementText">
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. <span id="dots">... <small onclick="myFunction()" id="myBtn">Read more</small></span><span id="more">It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</span>
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-12">
+                            <img src="{{ asset('upload/avatar/young-man-with-glasses-avatar-character-TARBFT.jpg') }}" alt="" class="img img-fluid img-thumbnail rounded">
+                            <h4>Md. Example</h4>
+                        </div>
+                        <div class="col-lg-8 col-md-12 statementText">
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. <span id="dots">... <small onclick="myFunction()" id="myBtn">Read more</small></span><span id="more">It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</span>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <h3 class="sectionTitle recreationsEventTitle"><span>PCAA Program News</span></h3>
     <section class="d-flex pt-4">
         @if($recreations)
             <div class="col-md-7 col-sm-12 p-2">
@@ -77,7 +106,7 @@
         @endforeach
     </section>
 
-    <h3 class="sectionTitle executiveComityMeetingTitle"><span>DUAA Scholarship</span></h3>
+    <h3 class="sectionTitle executiveComityMeetingTitle"><span>PCAA Scholarship</span></h3>
     <section class="d-flex pt-4">
         <div class="col-12 my-4 p-2">
             <a href="{{ route('farewells',$farewells[0]->id) }}"><img src="{{ asset($farewells[0]->image) }}" alt="Event Image"></a>
@@ -104,7 +133,7 @@
         </div>
     </section>
 
-    <h3 class="sectionTitle executiveComityMeetingTitle"><span>DUAA Documents</span></h3>
+    <h3 class="sectionTitle executiveComityMeetingTitle"><span>PCAA Documents</span></h3>
     <section class="d-flex pt-4">
         <div class="row">
             @foreach($blogs as $key => $blog)

@@ -106,6 +106,12 @@
                                 </li>
                         @endif
                     @endforeach
+                        <li class="nav-item float-right">
+                            <a href="javascript:void(0)" class="nav-link" target="" aria-haspopup="true" aria-expanded="false">
+                                <button class="custom-btn btn-12"><span>Click!</span><span>Read More</span></button>
+                            </a>
+                        </li>
+
                     <!-- mega-menu start -->
                     </ul>
                 </div>
